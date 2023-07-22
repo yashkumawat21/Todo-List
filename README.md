@@ -6,6 +6,11 @@ Schema : https://docs.google.com/spreadsheets/d/1GuS3398S9uZcCrEku31q7GlgJkRGQiy
 
 
 Points :
--> Date autocomplete and reminders not complted.
- -> Sort was from high to lo in priority.
--> As it is asked to edit the task in the current block like not to use any form so it is done in that way only.
+1-> Date autocomplete and reminders not complted.
+
+
+ 2-> Sort was from high to low in priority.
+
+ 
+3-> As it is asked to edit the task in the current block like not to use any form so it is done in that way only.
+ 4-> Rest all is same.
