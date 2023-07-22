@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Todo List 2022 with LocalStorage</title>
+	<!-- CSS Import -->
+	<link rel="stylesheet" href="main.css" />
+	<!-- End of CSS Import -->
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+	<!-- End of Fonts -->
+</head>
+<body>
+	<!-- App Wrapper -->
+	<main class="app">
+		<!-- Greeting -->
+		<!--<section class="greeting">
+			<h2 class="title">
+				What's up, <input type="text" id="name" placeholder="Name here" />
+			</h2>
+		</section>-->
+		<!-- End of Greeting -->
+		
+		<!-- New Todo -->
+		<section class="create-todo">
+			<h3>To-Do App</h3>
+			<form id="new-todo-form">
+				
+				<input 
+					type="text" 
+					placeholder="Write task"
+					name="content"
+					id="content" />
+				
+				<h4>Enter a category</h4>
+				<input 
+					type="text" 
+					placeholder="Enter a category"
+					name="category"
+					id="category" />
+					<h4>Enter a tag</h4>
+				<input 
+					type="text" 
+					placeholder="Enter a tag"
+					name="tag"
+					id="tag" />
+                <h4>Priority</h4>
+				<div class="options">
+					<label>
+						<input type="radio" name="priority" id="category1" value="1" /> 
+						<span class="bubble prio1"></span>
+						<div>Low</div>
+					</label>
+					<label>
+						<input type="radio" name="priority" id="category2" value="2" />
+						<span class="bubble prio2"></span>
+						<div>Medium </div>
+					</label>
+                    <label>
+						<input type="radio" name="priority" id="category3" value="3" />
+						<span class="bubble prio3"></span>
+						<div>High</div>
+					</label>
+				</div>
+				<div class="dueddbox">
+				<h4>Add A Due date</h4>
+                <p><input type="date" name="duedate" id ="dateInput"></p>
+			</div>
+				<input type="submit" value="Add todo item" />
+			</form>
+		</section>
+
+		<section>
+			
+		</section>
+		<!-- End of New Todo -->
+
+		<!-- Todo List -->
+
+		<div class="allitems">
+		<section class="todo-list">
+			<h3>TODO LIST</h3>
+			<table class="tablebar">
+				<tr>
+				<td class="checkbox">Filters :</td>
+				
+				<td class="categorybox">
+					<select id="categoryfilter">
+						
+					</select>
+				</td>
+				<td class="prioritybox">
+					<select id="priorityfilter">
+						<option value="defaultpriority">Choose Priority</option>
+						<option value="1">Low</option>
+						<option value="2" >Medium</option>
+						<option value="3" >High</option>
+					</select>
+				</td>
+				
+
+				<td class="sortbox">
+					<select id="sortfilter">
+						<option value="defaultsort">Sort by</option>
+						<option value="priorbasis">Priority</option>
+						<option value="date">Date</option>
+					</select>
+				</td>
+
+				<td class="searchbox" id="searchboxid">
+					
+					<input type="text" id="searchbar" placeholder="Search task or tags">
+				</input>
+				</td>
+			</tr>
+			<tr class="belowdate">
+				
+
+				<td id="duedatebox">
+					<h5>Filter Date:</h5>
+					<div>
+					<a>Start Date :</a>
+					<input type="date" id="startdate">
+				</div>
+				<div>
+					<a>last Date :</a>
+					<input type="date" id="enddate">
+				</div>
+				</td>
+
+			</tr>
+
+
+			</table>
+			<div class="list" id="todo-list"></div>
+			
+		</section>
+		<form id="subtask">
+			<input 
+				type="text" 
+				placeholder="Add a sub-task"
+				name="subtaskcontent"
+				id="subtaskcontent" />
+			<select id="parentoption" name="selectparent"></select>
+
+			
+			<input type="submit" value="Add a sub-task" id="submitsubtask" />	
+
+		</form>
+		<!-- End of Todo List -->
+	</div>
+
+	<div class="lastbox">
+	<section class="Expired">
+
+		<h3>Expired</h3>
+		<div class="expiredlist" id="listexpired">
+
+		</div>
+
+	</section>
+	<section class="activitylogs">
+
+		<h3>Activity logs</h3>
+		<div class="activitylogbox" id="logboxactivity">
+
+			
+
+		</div>
+	</section>
+</div>
+	</main>
+	<!-- End of App Wrapper -->
+
+	<!-- JS Import -->
+	<script src="script.js"></script>
+	<!-- End of JS Import -->
+</body>
+</html>
