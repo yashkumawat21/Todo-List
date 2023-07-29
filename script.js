@@ -593,6 +593,7 @@ const sublabel = document.createElement('label');
 			activityarr.push("Task " + deftask + " updated to " + todo.content +" at "+newdatetme);
 		localStorage.setItem('todos', JSON.stringify(todos));
 		displayactivity();
+		DisplayTodos();
 
 		  }
 		  
