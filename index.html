@@ -17,15 +17,8 @@
 <body>
 	<!-- App Wrapper -->
 	<main class="app">
-		<!-- Greeting -->
-		<!--<section class="greeting">
-			<h2 class="title">
-				What's up, <input type="text" id="name" placeholder="Name here" />
-			</h2>
-		</section>-->
-		<!-- End of Greeting -->
 		
-		<!-- New Todo -->
+		
 		<section class="create-todo">
 			<h3>To-Do App</h3>
 			<form id="new-todo-form">
@@ -35,57 +28,111 @@
 					placeholder="Write task"
 					name="content"
 					id="content" />
+				<div class="inputctbox">
 				
-				<h4>Enter a category</h4>
+				<h4>Enter a category : </h4>
 				<input 
 					type="text" 
 					placeholder="Enter a category"
 					name="category"
 					id="category" />
-					<h4>Enter a tag</h4>
+				</div>
+				<div class="inputctbox">
+					<h4>Enter a tag :</h4>
+
 				<input 
 					type="text" 
 					placeholder="Enter a tag"
 					name="tag"
 					id="tag" />
-                <h4>Priority</h4>
-				<div class="options">
-					<label>
-						<input type="radio" name="priority" id="category1" value="1" /> 
-						<span class="bubble prio1"></span>
-						<div>Low</div>
-					</label>
-					<label>
-						<input type="radio" name="priority" id="category2" value="2" />
-						<span class="bubble prio2"></span>
-						<div>Medium </div>
-					</label>
-                    <label>
-						<input type="radio" name="priority" id="category3" value="3" />
-						<span class="bubble prio3"></span>
-						<div>High</div>
-					</label>
 				</div>
-				<div class="dueddbox">
-				<h4>Add A Due date</h4>
+				<div class="inputctbox">
+                <h4>Priority : </h4>
+				<select class="prioritybasis" name="priority">
+					<option value="Default">Choose Priority</option>
+						<option value="Low">Low</option>
+						<option value="Medium" >Medium</option>
+						<option value="High" >High</option>
+
+
+				</select>
+				</div>
+			
+            <div class="duedatebox">
+			<div class="inputctbox">
+				
+				<h4>Due date :</h4>
                 <p><input type="date" name="duedate" id ="dateInput"></p>
-			</div>
+            </div>
+            <div class="inputctbox">
+                <h4>Due Time :</h4>
+				<p><input type="time" name="duedatetime" id ="timeInput"></p>
+			
+		</div>
+    </div>
+        
 				<input type="submit" value="Add todo item" />
 			</form>
 		</section>
-
-		<section>
+		<section class="subreminder">
 			
+			<form id="subtask">
+				<h3>Add a Subtask</h3>
+				<input 
+					type="text" 
+					placeholder="Add a sub-task"
+					name="subtaskcontent"
+					id="subtaskcontent" />
+				<select id="parentoption" name="selectparent"></select>
+	
+				
+				<input type="submit" value="Add a sub-task" id="submitsubtask" />	
+	
+			</form>
+			<form id="reminder">
+				<h3>Add a Reminder</h3>
+				<input 
+					type="text" 
+					placeholder="Add a reminder"
+					name="remindercontent"
+					id="remindercontent" />
+				<div class="reminderbox">
+				<input type="date" id="reminderdate" name="dated"/>
+				<input type="time" id="remindertime" name="timed">
+			</div>
+				
+				<input type="submit" value="Add a reminder" id="submitreminder" />	
+	
+			</form>
+			<!-- End of Todo List -->
+		</div>
 		</section>
-		<!-- End of New Todo -->
-
-		<!-- Todo List -->
-
+		
+	
 		<div class="allitems">
 		<section class="todo-list">
 			<h3>TODO LIST</h3>
 			<table class="tablebar">
+				
+				<tr class="sortandsearch">
+					<td><h4>Sort and search :</h4></td>
+					<td class="sortbox">
+						<select id="sortfilter">
+							<option value="defaultsort">Sort by</option>
+							<option value="priorbasis">Priority</option>
+							<option value="date">Date</option>
+						</select>
+					</td>
+	
+					<td class="searchbox" id="searchboxid">
+						
+						<input type="text" id="searchbar" placeholder="Search task or tags">
+					</input>
+					</td>
+				</tr>
 				<tr>
+
+					
 				<td class="checkbox">Filters :</td>
 				
 				<td class="categorybox">
@@ -95,31 +142,12 @@
 				</td>
 				<td class="prioritybox">
 					<select id="priorityfilter">
-						<option value="defaultpriority">Choose Priority</option>
-						<option value="1">Low</option>
-						<option value="2" >Medium</option>
-						<option value="3" >High</option>
+						<option value="default">Choose Priority</option>
+						<option value="Low">Low</option>
+						<option value="Medium" >Medium</option>
+						<option value="High" >High</option>
 					</select>
 				</td>
-				
-
-				<td class="sortbox">
-					<select id="sortfilter">
-						<option value="defaultsort">Sort by</option>
-						<option value="priorbasis">Priority</option>
-						<option value="date">Date</option>
-					</select>
-				</td>
-
-				<td class="searchbox" id="searchboxid">
-					
-					<input type="text" id="searchbar" placeholder="Search task or tags">
-				</input>
-				</td>
-			</tr>
-			<tr class="belowdate">
-				
-
 				<td id="duedatebox">
 					<h5>Filter Date:</h5>
 					<div>
@@ -132,37 +160,60 @@
 				</div>
 				</td>
 
+
+				
 			</tr>
+			
 
 
 			</table>
+
+			<div class="heading">
+				
+				
+					<div class="todohead">To-do item</div>
+					<div class="todoother">Tag</div>
+					<div class="todoother">Category</div>
+					<div class="todoother">Priority</div>
+					<div class="todoother">date</div>
+					<div class="todoother">Time</div>
+					<div class="todoactions">Edit or Delete</div>
+					
+					
+
+				
+			</div>
 			<div class="list" id="todo-list"></div>
 			
 		</section>
-		<form id="subtask">
-			<input 
-				type="text" 
-				placeholder="Add a sub-task"
-				name="subtaskcontent"
-				id="subtaskcontent" />
-			<select id="parentoption" name="selectparent"></select>
+		
+</div>
 
-			
-			<input type="submit" value="Add a sub-task" id="submitsubtask" />	
-
-		</form>
-		<!-- End of Todo List -->
-	</div>
-
-	<div class="lastbox">
 	<section class="Expired">
 
-		<h3>Expired</h3>
+		<h3>Pending and Expired</h3>
+		
+		<div class="heading">
+				
+				
+			<div class="todohead">To-do item</div>
+			<div class="todoother">Tag</div>
+			<div class="todoother">Category</div>
+			<div class="todoother">Priority</div>
+			<div class="todoother">date</div>
+			<div class="todoother">Time</div>
+			<div class="todoactions">Edit or Delete</div>
+			
+			
+
+		
+	</div>
 		<div class="expiredlist" id="listexpired">
 
 		</div>
 
 	</section>
+	<div class="lastbox">
 	<section class="activitylogs">
 
 		<h3>Activity logs</h3>
